@@ -9,10 +9,10 @@
 
     <div class="container">
       <p class="type-one">Como é o frete que voce precisa?</p>
-      <hr align = "left" width="50%"/>
+      <div class="linha"></div>
 
       <p class="type-two">Destino</p>
-        <select v-model="selected">
+        <select class="campo" v-model="selected">
           <option disabled value="">Escolha um item</option>
           <option>Expresso Oriente</option>
           <option>LevoJa</option>
@@ -20,7 +20,7 @@
         </select>
 
       <p class="type-two">Peso</p>
-        <input type="number" v-model="rafa" placeholder="Insira aqui o peso da carga em Kg">
+        <input class="campo" type="number" v-model="rafa" placeholder="Insira aqui o peso da carga em Kg">
     </div>
 
     <div class="btn">      
@@ -29,7 +29,7 @@
 
     <div class="container best-alternatives">
       <p class="type-one">Estas são as melhores alternativas de frete que encontramos para você</p>
-      <hr align = "left" width="50%"/>
+      <div class="linha"></div>
     </div>
   </div>
 </template>
@@ -118,6 +118,18 @@ export default {
 
 .best-alternatives{
   margin-top: 24px;
+}
+
+.campo{
+  background: #CFE2F3;
+  width: calc(50%);
+  height: calc(50px);
+}
+
+.linha{
+  align: left;
+  width: 50%;
+  border-bottom: 1px solid #000000;
 }
 
 </style>
