@@ -12,11 +12,18 @@
       <div class="linha"></div>
 
       <p class="type-two">Destino</p>
-        <select class="campo" v-model="selected">
+        <select class="campo">
           <option disabled value="">Escolha um item</option>
-          <option>Expresso Oriente</option>
-          <option>LevoJa</option>
-          <option>Rapido Jacutinga</option>
+          <option> São Paulo</option>
+          <option>Belo Horizonte</option>
+          <option>Curitiba</option>
+          <option>Fortaleza</option>
+          <option>Campinas</option>
+          <option>Natal</option>
+          <option>Manaus</option>
+          <option>Rio de Janeiro</option>
+          <option>Salvador</option>
+          <option>Recife</option>
         </select>
 
       <p class="type-two">Peso</p>
