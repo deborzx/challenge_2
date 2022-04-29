@@ -11,19 +11,10 @@
       <p class="type-one">Como é o frete que voce precisa?</p>
       <div class="linha"></div>
 
-      <p class="type-two">Destino</p>
-        <select class="campo">
-          <option disabled value="">Escolha um item</option>
-          <option> São Paulo</option>
-          <option>Belo Horizonte</option>
-          <option>Curitiba</option>
-          <option>Fortaleza</option>
-          <option>Campinas</option>
-          <option>Natal</option>
-          <option>Manaus</option>
-          <option>Rio de Janeiro</option>
-          <option>Salvador</option>
-          <option>Recife</option>
+      <p for="transports" class="type-two">Destino</p>
+        <select class="campo" name="transports" id="transports" v-model="transports">
+          <option value="">Selecione o destino do frete</option>
+          <option v-for="transports in transport" :key="transports.id" :values="transports.name">{{ transports.name }}</option>
         </select>
 
       <p class="type-two">Peso</p>
@@ -64,6 +55,18 @@ export default {
   created() {
     // Implemente aqui o GET dos dados da API REST
     // para que isso ocorra na inicialização da pagina
+    // eslint-disable-next-line no-unused-vars
+    async function getInfo(){
+      const req = await fetch("http://localhost:3000/transport");
+      const data = await req.json();
+
+      this.id = data.id;
+      this.name = data.name;
+      this.cost_transport_light = data.cost_transport_light;
+      this.cost_transport_heavy = data.cost_transport_heavy;
+      this.city = data.city;
+      this.lead_time = data.lead_time;
+    }
     this.appName = 'MELHOR FRETE'
   },
   methods: {
